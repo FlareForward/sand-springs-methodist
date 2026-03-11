@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Sand Springs Methodist Church | Sand Springs, OK",
   description:
-    "Welcome to Sand Springs Methodist Church — a community rooted in faith, scripture, and service. Join us Sunday at 10:30 AM in Sand Springs, Oklahoma.",
+    "Welcome to Sand Springs Methodist Church — a community rooted in faith, scripture, and service. Join us Sunday at 9 AM or 11 AM at 319 N. Main St, Sand Springs, Oklahoma.",
   keywords: [
     "Sand Springs Methodist Church",
     "Methodist Church Sand Springs OK",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sand Springs Methodist Church",
     description:
-      "A community rooted in faith, scripture, and service. Join us Sunday at 10:30 AM.",
+      "A community rooted in faith, scripture, and service. Join us Sunday at 9 AM or 11 AM.",
     siteName: "Sand Springs Methodist Church",
     locale: "en_US",
     type: "website",

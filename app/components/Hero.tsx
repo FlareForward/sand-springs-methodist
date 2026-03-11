@@ -58,11 +58,11 @@ export default function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-3">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
             <span className="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0" />
-            Sunday Worship — 10:30 AM
+            9 AM · 11 AM — Sunday Worship
           </div>
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
             <span className="w-2 h-2 rounded-full bg-blue-300 flex-shrink-0" />
-            Thursday Gathering — 6:30 PM
+            10 AM — Small Group Studies
           </div>
         </div>
       </div>

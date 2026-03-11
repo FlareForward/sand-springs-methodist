@@ -49,7 +49,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
-                100 Church Street, Sand Springs, OK 74063
+                319 N. Main St, Sand Springs, OK 74063
               </p>
               <p className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-amber-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -72,17 +72,19 @@ export default function Footer() {
 
           {/* Service times */}
           <div>
-            <h3 className="text-white font-serif font-bold text-base mb-4">Service Times</h3>
-            <div className="space-y-4">
+            <h3 className="text-white font-serif font-bold text-base mb-4">Sunday Schedule</h3>
+            <div className="space-y-3">
               <div className="border-l-2 border-amber-500 pl-4">
-                <p className="text-white text-sm font-semibold">Sunday Worship</p>
-                <p className="text-blue-300 text-sm">10:30 AM</p>
-                <p className="text-blue-400 text-xs">Main Sanctuary</p>
+                <p className="text-white text-sm font-semibold">9:00 AM</p>
+                <p className="text-blue-300 text-sm">Contemporary Service</p>
               </div>
-              <div className="border-l-2 border-blue-500 pl-4">
-                <p className="text-white text-sm font-semibold">Thursday Gathering</p>
-                <p className="text-blue-300 text-sm">6:30 PM</p>
-                <p className="text-blue-400 text-xs">Fellowship Hall</p>
+              <div className="border-l-2 border-blue-400 pl-4">
+                <p className="text-white text-sm font-semibold">10:00 AM</p>
+                <p className="text-blue-300 text-sm">Small Group Studies</p>
+              </div>
+              <div className="border-l-2 border-amber-500 pl-4">
+                <p className="text-white text-sm font-semibold">11:00 AM</p>
+                <p className="text-blue-300 text-sm">Traditional Service</p>
               </div>
               <div className="border-l-2 border-slate-600 pl-4">
                 <p className="text-white text-sm font-semibold">Office Hours</p>

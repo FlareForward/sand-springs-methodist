@@ -59,8 +59,8 @@ export default function PastorMessage() {
                 serving our neighbors, and growing in the love of Christ.
               </p>
               <p>
-                I invite you to join us any Sunday at 10:30 AM or Thursday
-                evening at 6:30 PM. Come as you are. There is a place for
+                I invite you to join us any Sunday — Contemporary at 9:00 AM,
+                Small Groups at 10:00 AM, or Traditional at 11:00 AM. Come as you are. There is a place for
                 you at this table.
               </p>
             </div>
