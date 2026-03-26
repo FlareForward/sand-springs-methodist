@@ -39,24 +39,29 @@ export default function Nav() {
             className="flex items-center gap-3 group"
             onClick={handleLinkClick}
           >
-            <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-400 transition-colors">
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-6 h-6 text-blue-900"
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            {/* Global Methodist three-in-one circle symbol */}
+            <div className="w-11 h-11 flex items-center justify-center flex-shrink-0">
+              <svg viewBox="0 0 100 100" className="w-11 h-11" xmlns="http://www.w3.org/2000/svg">
+                {/* Three overlapping blue circles — Trinity / Global Methodist emblem */}
+                {/* Top circle */}
+                <circle cx="50" cy="32" r="28" fill="none" stroke="#38bdf8" strokeWidth="7" opacity="0.9" />
+                {/* Bottom-left circle */}
+                <circle cx="32" cy="65" r="28" fill="none" stroke="#38bdf8" strokeWidth="7" opacity="0.9" />
+                {/* Bottom-right circle */}
+                <circle cx="68" cy="65" r="28" fill="none" stroke="#38bdf8" strokeWidth="7" opacity="0.9" />
+                {/* Center dot where all three meet */}
+                <circle cx="50" cy="54" r="5" fill="#7dd3fc" />
               </svg>
             </div>
             <div className="hidden sm:block">
-              <span className="block font-serif text-white font-bold text-lg leading-tight">
+              <span className="block font-serif text-sky-300 font-bold text-lg leading-tight">
                 Sand Springs
               </span>
-              <span className="block text-amber-400 text-xs tracking-widest uppercase font-medium">
+              <span className="block text-sky-300 text-xs tracking-widest uppercase font-medium">
                 Methodist Church
               </span>
             </div>
-            <span className="sm:hidden font-serif text-white font-bold text-base leading-tight">
+            <span className="sm:hidden font-serif text-sky-300 font-bold text-base leading-tight">
               Sand Springs Methodist
             </span>
           </a>

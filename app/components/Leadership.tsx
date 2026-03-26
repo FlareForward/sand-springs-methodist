@@ -20,7 +20,7 @@ interface Leader {
 
 const leaders: Leader[] = [
   {
-    name: "Pastor John Williams",
+    name: "Reverend Cole Fields",
     role: "Lead Pastor",
     bio: "Pastor John has served Sand Springs Methodist for over 12 years. He holds a Master of Divinity from Asbury Theological Seminary and is passionate about expository preaching, discipleship, and connecting the local church to the community. He and his wife Rachel have three children.",
     src: "/leadership/pastor.jpg",

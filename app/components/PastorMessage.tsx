@@ -9,7 +9,7 @@ export default function PastorMessage() {
           {/* Pastor photo */}
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
-              <div className="relative w-72 h-80 sm:w-80 sm:h-[420px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-80 h-96 sm:w-96 sm:h-[480px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/leadership/pastor.jpg"
                   alt="Pastor — Sand Springs Methodist Church"
@@ -21,7 +21,7 @@ export default function PastorMessage() {
                 {/* Subtle bottom gradient for name overlay */}
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-blue-950/80 to-transparent" />
                 <div className="absolute bottom-5 left-5">
-                  <p className="text-white font-serif text-lg font-bold leading-tight">Pastor John Williams</p>
+                  <p className="text-white font-serif text-lg font-bold leading-tight">Reverend Cole Fields</p>
                   <p className="text-amber-300 text-sm">Lead Pastor</p>
                 </div>
               </div>

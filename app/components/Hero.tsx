@@ -10,9 +10,6 @@ export default function Hero() {
         style={{ backgroundImage: "url(/photos/church-1.jpg)" }}
       />
 
-      {/* Subtle aesthetic tint overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-blue-900/10 to-slate-900/25" />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-900/5 via-transparent to-slate-900/5" />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
@@ -54,14 +51,35 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
-            <span className="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0" />
-            9 AM · 11 AM — Sunday Worship
+        <div className="flex flex-col sm:flex-row items-start justify-center gap-8">
+          {/* Sunday Services */}
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-white font-semibold text-sm uppercase tracking-widest mb-1">Sunday Services</p>
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0" />
+              Contemporary Service — 9:00 AM
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-blue-300 flex-shrink-0" />
+              Sunday School — 10:00 AM
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0" />
+              Traditional Service — 11:00 AM
+            </div>
           </div>
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
-            <span className="w-2 h-2 rounded-full bg-blue-300 flex-shrink-0" />
-            10 AM — Small Group Studies
+
+          {/* Youth Services */}
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-white font-semibold text-sm uppercase tracking-widest mb-1">Youth Services</p>
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-green-400 flex-shrink-0" />
+              Youth Night — Wednesday 4:00–8:30 PM
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-green-400 flex-shrink-0" />
+              Youth Sunday School — Sunday 10:00 AM
+            </div>
           </div>
         </div>
       </div>
