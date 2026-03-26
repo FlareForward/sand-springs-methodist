@@ -10,9 +10,9 @@ export default function Hero() {
         style={{ backgroundImage: "url(/photos/church-1.jpg)" }}
       />
 
-      {/* Warm dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/75 via-blue-900/65 to-blue-950/80" />
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-950/30 via-transparent to-blue-950/30" />
+      {/* Subtle aesthetic tint overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-blue-900/10 to-slate-900/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-900/5 via-transparent to-slate-900/5" />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
@@ -20,10 +20,9 @@ export default function Hero() {
           Sand Springs, Oklahoma
         </p>
 
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
-          Welcome to{" "}
-          <span className="text-amber-400">Sand Springs</span>
-          <span className="block">Methodist Church</span>
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
+          <span className="text-sky-300">Sand Springs</span>
+          <span className="text-sky-300 block">Methodist Church</span>
         </h1>
 
         <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
