@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat -ano)",
+      "Read(//c/Users/david/OneDrive/Documents/GitHub/sand-springs-methodist/**)",
+      "Bash(taskkill /F /PID 16332)",
+      "Bash(npm run:*)",
+      "Bash(tasklist)",
+      "Bash(taskkill //F //PID 16332)"
+    ]
+  }
+}

@@ -9,7 +9,7 @@ export default function PastorMessage() {
           {/* Pastor photo */}
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
-              <div className="relative w-80 h-96 sm:w-96 sm:h-[480px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-96 h-[480px] sm:w-[480px] sm:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/leadership/pastor.jpg"
                   alt="Pastor — Sand Springs Methodist Church"

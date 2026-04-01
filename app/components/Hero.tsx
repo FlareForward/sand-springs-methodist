@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Real church photo background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url(/photos/church-1.jpg)" }}
+        style={{ backgroundImage: "url(/photos/church-3.jpg)" }}
       />
 
 
