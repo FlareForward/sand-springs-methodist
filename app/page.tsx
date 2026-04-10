@@ -7,8 +7,6 @@ import CoreBeliefs from "./components/CoreBeliefs";
 import Leadership from "./components/Leadership";
 import VisitUs from "./components/VisitUs";
 import Giving from "./components/Giving";
-import ContactForm from "./components/ContactForm";
-
 export default function Home() {
   return (
     <>
@@ -21,7 +19,6 @@ export default function Home() {
       <Leadership />
       <VisitUs />
       <Giving />
-      <ContactForm />
     </>
   );
 }

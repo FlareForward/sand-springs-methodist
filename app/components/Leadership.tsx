@@ -22,7 +22,7 @@ const leaders: Leader[] = [
   {
     name: "Reverend Cole Fields",
     role: "Lead Pastor",
-    bio: "Pastor John has served Sand Springs Methodist for over 12 years. He holds a Master of Divinity from Asbury Theological Seminary and is passionate about expository preaching, discipleship, and connecting the local church to the community. He and his wife Rachel have three children.",
+    bio: "Pastor Cole Fields has been serving Sand Springs Methodist since Aug 2024. He is close to graduating with his Master of Divinity, and is halfway through his Master of Arts in Biblical Studies. Pastor Cole is dedicated to spreading the truth of the Bible with expository and applicable messages and is married with children. Pastor Cole's wife is also an active servant.",
     src: "/leadership/pastor.jpg",
     email: "pastor@sandspringsmethodist.org",
   },
