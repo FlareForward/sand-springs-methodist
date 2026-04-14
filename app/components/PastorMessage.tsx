@@ -9,13 +9,13 @@ export default function PastorMessage() {
           {/* Pastor photo */}
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
-              <div className="relative w-96 h-[480px] sm:w-[480px] sm:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-[432px] h-[480px] sm:w-[480px] sm:h-[630px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/leadership/pastor.jpg"
                   alt="Pastor — Sand Springs Methodist Church"
                   fill
                   className="object-cover object-top"
-                  sizes="(max-width: 640px) 288px, 320px"
+                  sizes="(max-width: 640px) 432px, 480px"
                   priority
                 />
                 {/* Subtle bottom gradient for name overlay */}
@@ -46,31 +46,33 @@ export default function PastorMessage() {
 
             <div className="space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed">
               <p>
-                Welcome to Sand Springs Methodist Church. Whether you are
-                exploring faith for the very first time, returning after years
-                away, or looking for a church family to call home, we are so
-                glad you are here.
+                A warm hello from Sand Springs Methodist. This church is full
+                of welcoming people that strive to be like Jesus.
               </p>
               <p>
-                We are a congregation that believes deeply in the grace of
-                God, the authority of Scripture, and the power of community.
-                We gather not because we have it all figured out, but because
-                we are on this journey together — encouraging one another,
-                serving our neighbors, and growing in the love of Christ.
+                This church is a place where we encourage everyone to find a
+                place in the church where they feel called to serve. I will
+                also say that if you find this to be your church home, and you
+                want to launch a new ministry, I will support you fully so
+                long as it is Biblical and rooted in love.
               </p>
               <p>
-                I invite you to join us any Sunday — Contemporary at 9:00 AM,
-                Small Groups at 10:00 AM, or Traditional at 11:00 AM. Come as you are. There is a place for
-                you at this table.
+                I believe that the Bible teaches us the power of God can
+                change anyone&rsquo;s life, and everyone is called to serve.
+                Do not ignore the Holy Spirit! I pray that God continues to
+                reveal Himself to you.
               </p>
+              <p className="font-medium text-blue-900">Blessings</p>
             </div>
 
             <blockquote className="border-l-4 border-amber-500 pl-5 py-1">
               <p className="font-serif text-xl text-blue-800 italic leading-relaxed">
-                &ldquo;For where two or three gather in my name, there am I with them.&rdquo;
+                &ldquo;Awake, O sleeper!<br />
+                Rise from the dead,<br />
+                and Christ will shine on you!&rdquo;
               </p>
               <cite className="text-sm text-slate-500 mt-2 block not-italic">
-                — Matthew 18:20
+                — Ephesians 5:14
               </cite>
             </blockquote>
 

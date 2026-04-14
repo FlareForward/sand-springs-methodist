@@ -10,7 +10,6 @@ export default function Hero() {
         style={{ backgroundImage: "url(/photos/church-3.jpg)" }}
       />
 
-
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
         <p className="text-amber-400 text-sm font-semibold uppercase tracking-[0.2em] mb-6">

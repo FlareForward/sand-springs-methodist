@@ -28,19 +28,17 @@ export default function CoreBeliefs() {
             </div>
           </div>
 
-          {/* Right: heading */}
+          {/* Right: beliefs */}
           <div className="lg:col-span-3">
-            <div>
-              <p className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-3">
-                Our Foundation
-              </p>
+            <div className="mb-12">
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900">
                 What We Believe
               </h2>
-              <p className="mt-4 text-slate-600 text-lg leading-relaxed">
-                We believe that the Bible is the primary authority in our lives. We believe that the Bible is the infallible Word of God. We believe that repentance is the beginning of our salvation, and that God is calling us all to a new life of servanthood and purpose.
-              </p>
             </div>
+
+            <p className="text-slate-700 text-lg leading-relaxed">
+              We believe that the Bible is the primary authority in our lives. We believe that the scriptures are the infallible inspired Word of God. We do not compromise with culture. We believe in Holiness. We believe that the Power of God can change anyone. We believe that God forgives those who confess of their sin and earnestly repent. We believe that we are all broken, and that we all need what Jesus has to offer.
+            </p>
           </div>
 
         </div>
