@@ -38,3 +38,7 @@ next-env.d.ts
 # church site additions
 .env
 tsconfig.tsbuildinfo
+
+# Claude Code local config
+.claude/
+CLAUDE.md
