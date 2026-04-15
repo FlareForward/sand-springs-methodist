@@ -6,7 +6,8 @@
       "Bash(taskkill /F /PID 16332)",
       "Bash(npm run:*)",
       "Bash(tasklist)",
-      "Bash(taskkill //F //PID 16332)"
+      "Bash(taskkill //F //PID 16332)",
+      "Bash(ipconfig)"
     ]
   }
 }

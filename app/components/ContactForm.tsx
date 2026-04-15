@@ -90,8 +90,8 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="text-blue-900 font-semibold text-sm">Call Us</p>
-                  <a href="tel:+19185551234" className="text-slate-600 hover:text-amber-600 transition-colors text-sm">
-                    (918) 555-1234
+                  <a href="tel:+19182455955" className="text-slate-600 hover:text-amber-600 transition-colors text-sm">
+                    (918) 245-5955
                   </a>
                 </div>
               </div>

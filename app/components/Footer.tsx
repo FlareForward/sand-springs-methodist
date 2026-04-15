@@ -20,13 +20,12 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2 space-y-5">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center flex-shrink-0">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-6 h-6 text-blue-900"
-                >
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              <div className="w-11 h-11 flex items-center justify-center flex-shrink-0">
+                <svg viewBox="0 0 100 100" className="w-11 h-11" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="32" r="28" fill="none" stroke="#38bdf8" strokeWidth="7" opacity="0.9" />
+                  <circle cx="32" cy="65" r="28" fill="none" stroke="#38bdf8" strokeWidth="7" opacity="0.9" />
+                  <circle cx="68" cy="65" r="28" fill="none" stroke="#38bdf8" strokeWidth="7" opacity="0.9" />
+                  <circle cx="50" cy="54" r="5" fill="#7dd3fc" />
                 </svg>
               </div>
               <div>
@@ -55,8 +54,8 @@ export default function Footer() {
                 <svg className="w-4 h-4 text-amber-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                 </svg>
-                <a href="tel:+19185551234" className="hover:text-amber-400 transition-colors">
-                  (918) 555-1234
+                <a href="tel:+19182455955" className="hover:text-amber-400 transition-colors">
+                  (918) 245-5955
                 </a>
               </p>
               <p className="flex items-center gap-2">
@@ -128,7 +127,7 @@ export default function Footer() {
             &copy; {currentYear} Sand Springs Methodist Church. All rights reserved.
           </p>
           <p className="text-blue-500 text-xs text-center sm:text-right">
-            A United Methodist Congregation &bull; Sand Springs, OK
+            Global Methodist Denomination &bull; Sand Springs, OK
           </p>
         </div>
       </div>

@@ -27,9 +27,9 @@ const leaders: Leader[] = [
     email: "pastor@sandspringsmethodist.org",
   },
   {
-    name: "Sarah Johnson",
-    role: "Youth & Children's Director",
-    bio: "Sarah leads our thriving youth and children's ministries with creativity and compassion. She believes that faith formed in childhood lasts a lifetime. Sarah organizes weekly youth group, VBS, and family discipleship events throughout the year.",
+    name: "Jessica",
+    role: "Youth Director",
+    bio: "Jessica is an awesome leader who graduated from Oklahoma Wesleyan University with her Bachelors degree in Pastoral Ministry, and she is currently in seminary working on her Master of Divinity. Jessica is very dedicated to teaching our youth the importance of Scripture, and providing a safe place for the youth to eat, relax, and have fun.",
     src: null,
     email: "youth@sandspringsmethodist.org",
   },

@@ -84,8 +84,8 @@ export default function VisitUs() {
               </div>
               <div>
                 <h3 className="text-white font-serif text-lg font-semibold mb-1">Phone</h3>
-                <a href="tel:+19185551234" className="text-blue-200 hover:text-amber-400 transition-colors">
-                  (918) 555-1234
+                <a href="tel:+19182455955" className="text-blue-200 hover:text-amber-400 transition-colors">
+                  (918) 245-5955
                 </a>
               </div>
             </div>

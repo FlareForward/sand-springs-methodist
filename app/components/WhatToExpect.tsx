@@ -16,7 +16,7 @@ const cards = [
       </svg>
     ),
     title: "Family Friendly",
-    description: "From nursery care for the littlest ones to youth programs for teens, every member of your family has a place here. Children's ministry runs during Sunday worship so parents can engage fully.",
+    description: "From nursery care for the littlest ones to youth programs for teens, every member of your family has a place here. Children are in worship partially, but dismissed to children's church before the sermon so parents can engage fully.",
     accent: "border-t-blue-500",
   },
   {
