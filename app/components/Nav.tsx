@@ -39,12 +39,20 @@ export default function Nav() {
             className="flex items-center gap-3 group"
             onClick={handleLinkClick}
           >
+<<<<<<< HEAD
             <div className="w-11 h-11 flex items-center justify-center flex-shrink-0">
               <svg viewBox="0 0 100 100" className="w-11 h-11" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="32" r="28" fill="none" stroke="#93c5fd" strokeWidth="7" opacity="0.9" />
                 <circle cx="32" cy="65" r="28" fill="none" stroke="#93c5fd" strokeWidth="7" opacity="0.9" />
                 <circle cx="68" cy="65" r="28" fill="none" stroke="#93c5fd" strokeWidth="7" opacity="0.9" />
                 <circle cx="50" cy="54" r="5" fill="#93c5fd" />
+=======
+            <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <svg viewBox="0 0 40 40" className="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="13" r="10" stroke="#93c5fd" strokeWidth="2" />
+                <circle cx="13" cy="27" r="10" stroke="#93c5fd" strokeWidth="2" />
+                <circle cx="27" cy="27" r="10" stroke="#93c5fd" strokeWidth="2" />
+>>>>>>> 86e16ff (Update beliefs text, nav styling, and pastor photo size)
               </svg>
             </div>
             <div className="hidden sm:block">
