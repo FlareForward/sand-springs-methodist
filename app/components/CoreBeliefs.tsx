@@ -8,11 +8,7 @@ export default function CoreBeliefs() {
 
           {/* Left: Bible photo */}
           <div className="hidden lg:block lg:col-span-2">
-<<<<<<< HEAD
             <div className="sticky top-28">
-=======
-            <div className="sticky top-28 space-y-6">
->>>>>>> 86e16ff (Update beliefs text, nav styling, and pastor photo size)
               <div className="relative h-[448px] rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/photos/church-1.jpg"
@@ -43,10 +39,14 @@ export default function CoreBeliefs() {
             <p className="text-slate-700 text-lg leading-relaxed">
               We believe that the Bible is the primary authority in our lives. We believe that the scriptures are the infallible inspired Word of God. We do not compromise with culture. We believe in Holiness. We believe that the Power of God can change anyone. We believe that God forgives those who confess of their sin and earnestly repent. We believe that we are all broken, and that we all need what Jesus has to offer.
             </p>
-<<<<<<< HEAD
-=======
 
->>>>>>> 86e16ff (Update beliefs text, nav styling, and pastor photo size)
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900 mt-12 mb-6">
+              What is a Methodist?
+            </h2>
+
+            <p className="text-slate-700 text-lg leading-relaxed">
+              The term Methodist was given to a group of Christians in the 1700&apos;s. Methodist was meant to be an insult to Christians who had &ldquo;methods&rdquo; in their spiritual disciplines, such as prayer, scripture reading, fasting and feeding the poor. This early group of Christians really believed in holiness, and they were really organized. Methodists don&apos;t believe in anything unusual. We believe in salvation by grace through faith in Jesus Christ. We believe in free will. We believe that the Bible teaches us we can be sanctified through the power and grace of God. The early Methodist&apos;s were very active in service and preaching. We try to live that way. We are not affiliated with political movements. We believe in the Kingdom of God.
+            </p>
           </div>
 
         </div>
