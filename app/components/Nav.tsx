@@ -72,7 +72,9 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="#give"
+              href="https://www.eservicepayments.com/48545.htm"
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-3 px-4 py-2 text-sm font-semibold bg-amber-500 hover:bg-amber-400 text-blue-900 rounded-md transition-colors shadow-sm"
             >
               Give
@@ -129,7 +131,9 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#give"
+            href="https://www.eservicepayments.com/48545.htm"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={handleLinkClick}
             className="mt-2 px-3 py-3 text-base font-semibold bg-amber-500 hover:bg-amber-400 text-blue-900 rounded-md transition-colors text-center"
           >

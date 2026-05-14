@@ -66,7 +66,19 @@ export default function WhatToExpect() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
+          <h3 className="font-serif text-2xl font-bold text-blue-900 mb-4">Check out our TikTok!</h3>
+          <a
+            href="https://www.tiktok.com/@sand.springs.methodist?_r=1&_t=ZP-94zsN1DaZTz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-amber-500 hover:bg-amber-400 text-blue-900 font-semibold rounded-lg transition-colors shadow-sm"
+          >
+            Check It Out Now
+          </a>
+        </div>
+
+        <div className="text-center mt-6">
           <a
             href="#visit"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-blue-900 hover:bg-blue-800 text-white font-semibold rounded-lg transition-colors shadow-sm"

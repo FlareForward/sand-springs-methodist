@@ -34,9 +34,9 @@ const leaders: Leader[] = [
     email: "youth@sandspringsmethodist.org",
   },
   {
-    name: "Michael Torres",
+    name: "Cathy Gifford",
     role: "Worship Leader",
-    bio: "Michael leads our congregation in worship each Sunday, blending traditional Methodist hymns with contemporary praise. He studied music ministry at Oral Roberts University and also leads our Thursday evening worship gathering.",
+    bio: "Cathy is a wonderful music director. Cathy leads our choir and is very talented on multiple instruments. We are so blessed to have her here.",
     src: null,
     email: "worship@sandspringsmethodist.org",
   },

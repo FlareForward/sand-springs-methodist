@@ -46,41 +46,14 @@ export default function PhotoGallery() {
           </p>
         </div>
 
-        {/* Photo grid — first photo spans 2 columns on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {photos.map((photo, idx) => (
-            <div
-              key={idx}
-              className={`relative rounded-2xl overflow-hidden aspect-[4/3] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group ${photo.span}`}
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-              />
-              {/* Label overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="text-white font-serif font-semibold text-lg">
-                  {photo.label}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="text-center mt-10">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-blue-900">
+            Youth Group
+          </h3>
+          <p className="mt-4 text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            Our youth director is dedicated to a youth ministry of fun, worship, fellowship, and practical life applications. Every Wednesday at 4 pm the youth rooms are open for the kids to hang out, play games, watch movies, or learn; Dinner starts at 6:30, and then there is worship and a Bible lesson. There is free time after the lesson for the kids to just play games and have fun. We have active church camps and other activities. There are also mission opportunities as well. Hope to see you there! Parents are welcome to hang out or volunteer.
+          </p>
         </div>
-
-        <p className="text-center mt-6 text-slate-400 text-sm">
-          Add more photos to{" "}
-          <code className="bg-slate-100 px-1.5 py-0.5 rounded text-slate-600 font-mono text-xs">
-            /public/photos/
-          </code>{" "}
-          and update the array in{" "}
-          <code className="bg-slate-100 px-1.5 py-0.5 rounded text-slate-600 font-mono text-xs">
-            app/components/PhotoGallery.tsx
-          </code>
-        </p>
       </div>
     </section>
   );

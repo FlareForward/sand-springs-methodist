@@ -76,8 +76,8 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="text-blue-900 font-semibold text-sm">Email Us</p>
-                  <a href="mailto:info@sandspringsmethodist.org" className="text-slate-600 hover:text-amber-600 transition-colors text-sm">
-                    info@sandspringsmethodist.org
+                  <a href="mailto:office@sandspringsmc.org" className="text-slate-600 hover:text-amber-600 transition-colors text-sm">
+                    office@sandspringsmc.org
                   </a>
                 </div>
               </div>
