@@ -48,7 +48,7 @@ export default function Giving() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://www.eservicepayments.com/48545.htm"
+                href="https://secure.myvanco.com/L-Z46V/home"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-4 bg-amber-500 hover:bg-amber-400 text-blue-950 font-bold text-lg rounded-xl shadow-lg shadow-amber-500/30 transition-all hover:-translate-y-0.5"

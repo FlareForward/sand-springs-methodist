@@ -72,7 +72,7 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="https://www.eservicepayments.com/48545.htm"
+              href="https://secure.myvanco.com/L-Z46V/home"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-3 px-4 py-2 text-sm font-semibold bg-amber-500 hover:bg-amber-400 text-blue-900 rounded-md transition-colors shadow-sm"
@@ -131,7 +131,7 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="https://www.eservicepayments.com/48545.htm"
+            href="https://secure.myvanco.com/L-Z46V/home"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleLinkClick}
