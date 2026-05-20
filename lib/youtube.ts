@@ -1,18 +1,13 @@
 // YouTube configuration for Sand Springs Methodist Church
-// Replace each placeholder with the real value to activate full functionality.
-// No other code changes are required.
+// Values are read from environment variables set in .env.local (local)
+// and the Railway dashboard (production).
 
 export const YOUTUBE_CONFIG = {
-  // YouTube Data API v3 key (console.cloud.google.com)
-  apiKey: "YOUTUBE_API_KEY",
-
-  // YouTube channel ID (found in channel URL or About page)
-  channelId: "CHANNEL_ID",
-
-  // Playlist IDs — copy from the YouTube playlist URL (?list=...)
-  contemporaryPlaylistId: "CONTEMPORARY_PLAYLIST_ID",
-  traditionalPlaylistId: "TRADITIONAL_PLAYLIST_ID",
-} as const;
+  apiKey: process.env.YOUTUBE_API_KEY ?? "YOUTUBE_API_KEY",
+  channelId: process.env.YOUTUBE_CHANNEL_ID ?? "CHANNEL_ID",
+  contemporaryPlaylistId: process.env.YOUTUBE_PLAYLIST_ID ?? "CONTEMPORARY_PLAYLIST_ID",
+  traditionalPlaylistId: process.env.YOUTUBE_PLAYLIST_ID ?? "TRADITIONAL_PLAYLIST_ID",
+};
 
 // Returns true when the value is still a placeholder
 export function isPlaceholder(value: string): boolean {
