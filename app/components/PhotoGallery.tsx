@@ -1,35 +1,3 @@
-/**
- * PHOTO GALLERY
- * =============
- * To add or change photos:
- * 1. Add .jpg or .webp files to /public/photos/
- * 2. Update the `photos` array below with the filename, alt text, and label.
- * 3. The current 3 church photos (church-1.jpg, church-2.jpg, church-3.jpg) are already loaded.
- */
-
-import Image from "next/image";
-
-const photos = [
-  {
-    src: "/photos/church-1.jpg",
-    alt: "Sand Springs Methodist Church",
-    label: "Our Church",
-    span: "md:col-span-2",
-  },
-  {
-    src: "/photos/church-2.jpg",
-    alt: "Church life at Sand Springs Methodist",
-    label: "Church Life",
-    span: "",
-  },
-  {
-    src: "/photos/church-3.jpg",
-    alt: "Sand Springs Methodist community",
-    label: "Community",
-    span: "",
-  },
-];
-
 export default function PhotoGallery() {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#faf8f5]">
