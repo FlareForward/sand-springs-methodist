@@ -6,153 +6,120 @@ import { youthEvents, youthPhotos } from "@/content/youth";
 export const metadata: Metadata = {
   title: "Youth Group | Sand Springs Methodist Church",
   description:
-    "Stay up to date with youth group events, photos, and activities at Sand Springs Methodist Church in Sand Springs, OK.",
+    "Events and photos for the Sand Springs Methodist Church youth group.",
 };
 
 export default function YouthPage() {
   return (
-    <div className="bg-[#faf8f5] min-h-screen">
+    <div className="bg-[#faf8f5] min-h-screen pt-20">
 
-      {/* ── Hero ───────────────────────────────────────────────── */}
-      <div className="bg-blue-950 py-24 px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-amber-400 font-semibold text-sm uppercase tracking-widest mb-3">
-          Sand Springs Methodist
-        </p>
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-5">
-          Youth Group
-        </h1>
-        <p className="text-blue-200 text-lg max-w-2xl mx-auto leading-relaxed">
-          Fun, worship, fellowship, and real-life faith. Every Wednesday at
-          4&nbsp;PM — we&apos;d love to have you!
-        </p>
+      {/* ── Back to Homepage tab ───────────────────────────── */}
+      <div className="bg-blue-900 px-4 py-2 text-center">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 mt-10 text-blue-300 hover:text-white text-sm font-medium transition-colors"
+          className="inline-flex items-center gap-2 text-blue-200 hover:text-white text-sm font-medium transition-colors"
         >
-          ← Back to Home
+          ← Back to Homepage
         </Link>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-20">
+      {/* ── Main content card ──────────────────────────────── */}
+      <div className="max-w-2xl mx-auto px-4 py-10">
 
-        {/* ── Upcoming Events ────────────────────────────────────── */}
-        <section>
-          <div className="text-center mb-12">
-            <p className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-3">
-              What&apos;s Coming Up
-            </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-blue-900">
-              Upcoming Events
-            </h2>
-            <p className="mt-3 text-slate-500 text-base max-w-xl mx-auto">
-              Check back often — we&apos;re always adding new activities!
-            </p>
-          </div>
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-blue-900">
+            Welcome to the Youth!
+          </h1>
+          <p className="mt-3 text-slate-500 text-base max-w-lg mx-auto leading-relaxed">
+            Every Wednesday at 4 PM — games, dinner, worship, and Bible study.
+            Parents are always welcome!
+          </p>
+        </div>
+
+        {/* ── Upcoming Events ───────────────────────────────── */}
+        <section className="mb-10">
+          <h2 className="font-serif text-xl font-bold text-blue-900 mb-4 border-b border-slate-200 pb-2">
+            Upcoming Events
+          </h2>
 
           {youthEvents.length > 0 ? (
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="space-y-4">
               {youthEvents.map((event) => (
                 <div
                   key={event.id}
-                  className="bg-white rounded-2xl border border-slate-200 shadow-sm p-7 hover:shadow-md transition-shadow"
+                  className="bg-white rounded-xl border border-slate-200 shadow-sm p-5"
                 >
-                  <div className="flex items-start justify-between gap-4 mb-3 flex-wrap">
-                    <h3 className="font-serif text-xl font-bold text-blue-900">
+                  <div className="flex items-center justify-between gap-3 flex-wrap mb-1">
+                    <h3 className="font-semibold text-blue-900 text-base">
                       {event.title}
                     </h3>
-                    <span className="flex-shrink-0 bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full">
+                    <span className="bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full">
                       {event.date}
                     </span>
                   </div>
-                  <p className="text-amber-600 font-semibold text-sm mb-1">
-                    {event.time}
-                  </p>
+                  <p className="text-amber-600 text-sm font-medium mb-1">{event.time}</p>
                   {event.location && (
-                    <p className="text-slate-400 text-sm mb-4">
-                      📍 {event.location}
-                    </p>
+                    <p className="text-slate-400 text-xs mb-2">📍 {event.location}</p>
                   )}
-                  <p className="text-slate-600 leading-relaxed text-sm">
+                  <p className="text-slate-600 text-sm leading-relaxed">
                     {event.description}
                   </p>
                 </div>
               ))}
             </div>
           ) : (
-            <div className="text-center py-20 bg-white rounded-2xl border border-slate-200">
-              <p className="text-slate-400 text-lg">
-                No upcoming events posted yet — check back soon!
-              </p>
-            </div>
+            <p className="text-slate-400 text-sm text-center py-6 bg-white rounded-xl border border-slate-200">
+              No upcoming events yet — check back soon!
+            </p>
           )}
         </section>
 
-        {/* ── Divider ────────────────────────────────────────────── */}
-        <div className="border-t border-slate-200" />
-
-        {/* ── Photo Gallery ──────────────────────────────────────── */}
+        {/* ── Photos ────────────────────────────────────────── */}
         <section>
-          <div className="text-center mb-12">
-            <p className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-3">
-              Memories
-            </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-blue-900">
-              Youth Group Photos
-            </h2>
-            <p className="mt-3 text-slate-500 text-base max-w-xl mx-auto">
-              A glimpse into the fun we have together.
-            </p>
-          </div>
+          <h2 className="font-serif text-xl font-bold text-blue-900 mb-4 border-b border-slate-200 pb-2">
+            Photos
+          </h2>
 
           {youthPhotos.length > 0 ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-3">
               {youthPhotos.map((photo) => (
                 <div
                   key={photo.id}
-                  className="group relative rounded-2xl overflow-hidden aspect-square bg-slate-100 shadow-sm"
+                  className="group relative rounded-xl overflow-hidden aspect-square bg-slate-100 shadow-sm"
                 >
                   <Image
                     src={photo.src}
                     alt={photo.alt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 640px) 50vw, 33vw"
+                    sizes="(max-width: 672px) 33vw, 210px"
                   />
                   {photo.caption && (
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <p className="text-white text-sm font-medium">
-                        {photo.caption}
-                      </p>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p className="text-white text-xs font-medium">{photo.caption}</p>
                     </div>
                   )}
                 </div>
               ))}
             </div>
           ) : (
-            <div className="text-center py-20 bg-white rounded-2xl border border-slate-200">
-              <div className="text-5xl mb-4">📸</div>
-              <p className="text-slate-400 text-lg font-medium">
-                Photos coming soon!
-              </p>
-              <p className="text-slate-300 text-sm mt-2">
-                Check back after our next event.
-              </p>
+            <div className="text-center py-10 bg-white rounded-xl border border-slate-200">
+              <div className="text-4xl mb-2">📸</div>
+              <p className="text-slate-400 text-sm">Photos coming soon!</p>
             </div>
           )}
         </section>
-      </div>
 
-      {/* ── Bottom CTA ─────────────────────────────────────────── */}
-      <div className="border-t border-slate-200 bg-white py-16 px-4 text-center">
-        <p className="text-slate-600 text-lg mb-6">
-          Questions about youth group? We&apos;d love to hear from you.
-        </p>
-        <Link
-          href="/#contact"
-          className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-400 text-blue-900 font-bold rounded-lg transition-colors shadow-lg shadow-amber-500/20"
-        >
-          Contact Us
-        </Link>
+        {/* ── Contact nudge ─────────────────────────────────── */}
+        <div className="mt-10 text-center">
+          <Link
+            href="/#contact"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-400 text-blue-900 font-bold rounded-lg transition-colors shadow-md shadow-amber-500/20 text-sm"
+          >
+            Questions? Contact Us
+          </Link>
+        </div>
       </div>
     </div>
   );
