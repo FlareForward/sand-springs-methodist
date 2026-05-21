@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Fredoka_One } from "next/font/google";
+import { Inter, Playfair_Display, Fredoka } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const fredoka = Fredoka_One({
+const fredoka = Fredoka({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-fredoka",
