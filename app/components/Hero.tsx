@@ -16,9 +16,9 @@ export default function Hero() {
           Sand Springs, Oklahoma
         </p>
 
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
-          <span className="text-sky-300">Sand Springs</span>
-          <span className="text-sky-300 block">Methodist Church</span>
+        <h1 className="font-serif text-[2.475rem] sm:text-[3.3rem] md:text-[4.125rem] lg:text-[4.95rem] font-bold leading-[1.1] mb-6">
+          <span className="text-red-500">Sand Springs</span>
+          <span className="text-red-500 block">Methodist Church</span>
         </h1>
 
         <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
