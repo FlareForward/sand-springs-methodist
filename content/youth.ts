@@ -58,4 +58,10 @@ export const youthPhotos: YouthPhoto[] = [
     alt: "Youth group color run at sunset",
     caption: "Color Run Night",
   },
+  {
+    id: 2,
+    src: "/photos/youth/cleanup-day.jpg",
+    alt: "Youth group community cleanup day",
+    caption: "Community Cleanup Day",
+  },
 ];
