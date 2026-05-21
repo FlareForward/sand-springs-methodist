@@ -42,7 +42,7 @@ export async function fetchPlaylistVideos(
       `&playlistId=${encodeURIComponent(playlistId)}` +
       `&key=${encodeURIComponent(apiKey)}`;
 
-    const res = await fetch(url, { next: { revalidate: 3600 } });
+    const res = await fetch(url, { next: { revalidate: 60 } });
     if (!res.ok) return [];
 
     const data = await res.json();
