@@ -27,7 +27,8 @@ export interface YouTubeVideo {
 }
 
 // Fetches up to `maxResults` videos from a playlist, sorted newest first.
-// Returns an empty array on any error or when the API key is a placeholder.
+// Uses a two-step approach: playlistItems for IDs/thumbnails, then videos.list
+// for accurate publish dates — the only reliable source for sort order.
 export async function fetchPlaylistVideos(
   playlistId: string,
   apiKey: string,
@@ -36,42 +37,69 @@ export async function fetchPlaylistVideos(
   if (isPlaceholder(apiKey) || isPlaceholder(playlistId)) return [];
 
   try {
-    const url =
+    // Step 1: get playlist items (video IDs + thumbnails)
+    const playlistUrl =
       `https://www.googleapis.com/youtube/v3/playlistItems` +
       `?part=snippet&maxResults=${maxResults}` +
       `&playlistId=${encodeURIComponent(playlistId)}` +
       `&key=${encodeURIComponent(apiKey)}`;
 
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) return [];
+    const playlistRes = await fetch(playlistUrl, { cache: "no-store" });
+    if (!playlistRes.ok) return [];
+    const playlistData = await playlistRes.json();
 
-    const data = await res.json();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const videos = (data.items ?? []).map((item: any) => ({
-      videoId: item.snippet?.resourceId?.videoId ?? "",
-      title: item.snippet?.title ?? "Untitled",
-      thumbnail:
-        item.snippet?.thumbnails?.medium?.url ??
-        item.snippet?.thumbnails?.default?.url ??
-        "",
-      publishedAt: item.snippet?.videoPublishedAt ?? item.snippet?.publishedAt ?? "",
-    })).filter((v: YouTubeVideo) => v.videoId !== "");
+    const items: any[] = playlistData.items ?? [];
+    const videoIds = items
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .map((item: any) => item.snippet?.resourceId?.videoId ?? "")
+      .filter((id: string) => id !== "");
 
-    // YouTube returns playlist items oldest-first. Try sorting by publish date;
-    // if dates are missing/invalid fall back to simply reversing the array.
-    const getTime = (iso: string) => {
-      const t = iso ? new Date(iso).getTime() : NaN;
-      return isNaN(t) ? 0 : t;
-    };
-    const hasDates = videos.some((v: YouTubeVideo) => getTime(v.publishedAt) > 0);
-    if (hasDates) {
-      videos.sort((a: YouTubeVideo, b: YouTubeVideo) =>
-        getTime(b.publishedAt) - getTime(a.publishedAt)
-      );
-    } else {
-      videos.reverse();
+    if (videoIds.length === 0) return [];
+
+    // Step 2: get actual publish dates from videos.list (always accurate)
+    const videosUrl =
+      `https://www.googleapis.com/youtube/v3/videos` +
+      `?part=snippet&id=${videoIds.join(",")}` +
+      `&key=${encodeURIComponent(apiKey)}`;
+
+    const videosRes = await fetch(videosUrl, { cache: "no-store" });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const videosData = videosRes.ok ? await videosRes.json() : { items: [] };
+
+    // Build videoId → publishedAt lookup
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const dateMap = new Map<string, string>();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    for (const v of (videosData.items ?? []) as any[]) {
+      if (v.id && v.snippet?.publishedAt) {
+        dateMap.set(v.id, v.snippet.publishedAt);
+      }
     }
-    return videos;
+
+    // Merge playlist thumbnails with accurate publish dates
+    const videos: YouTubeVideo[] = items
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .map((item: any) => {
+        const videoId = item.snippet?.resourceId?.videoId ?? "";
+        return {
+          videoId,
+          title: item.snippet?.title ?? "Untitled",
+          thumbnail:
+            item.snippet?.thumbnails?.medium?.url ??
+            item.snippet?.thumbnails?.default?.url ??
+            "",
+          publishedAt: dateMap.get(videoId) ?? "",
+        };
+      })
+      .filter((v: YouTubeVideo) => v.videoId !== "");
+
+    // Sort newest first using the accurate publish dates
+    return videos.sort((a: YouTubeVideo, b: YouTubeVideo) => {
+      const aTime = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
+      const bTime = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
+      return bTime - aTime;
+    });
   } catch {
     return [];
   }
