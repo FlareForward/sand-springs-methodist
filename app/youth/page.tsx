@@ -78,23 +78,23 @@ export default function YouthPage() {
         {/* ── Photos ────────────────────────────────────────── */}
         <section>
           {youthPhotos.length > 0 ? (
-            <div className="flex flex-col gap-10">
+            <div className="grid grid-cols-2 gap-6">
               {youthPhotos.map((photo) => (
                 <div
                   key={photo.id}
-                  className="group relative w-full rounded-2xl overflow-hidden shadow-lg bg-slate-100"
+                  className="group relative rounded-2xl overflow-hidden shadow-lg bg-slate-100"
                 >
                   <Image
                     src={photo.src}
                     alt={photo.alt}
-                    width={1200}
-                    height={900}
+                    width={600}
+                    height={450}
                     className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 896px) 100vw, 896px"
+                    sizes="(max-width: 896px) 50vw, 448px"
                   />
                   {photo.caption && (
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <p className="text-white text-sm font-medium">{photo.caption}</p>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p className="text-white text-xs font-medium">{photo.caption}</p>
                     </div>
                   )}
                 </div>
@@ -110,12 +110,13 @@ export default function YouthPage() {
 
         {/* ── Contact nudge ─────────────────────────────────── */}
         <div className="mt-10 text-center">
-          <Link
-            href="/#contact"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-400 text-blue-900 font-bold rounded-lg transition-colors shadow-md shadow-amber-500/20 text-sm"
-          >
-            Questions? Contact Us
-          </Link>
+          <p className="text-slate-600 text-base">
+            Questions? Contact our youth director Jessica at the church{" "}
+            <a href="tel:9182455955" className="font-semibold text-blue-900 hover:underline">
+              918-245-5955
+            </a>
+            .
+          </p>
         </div>
       </div>
     </div>
