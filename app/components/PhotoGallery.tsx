@@ -17,7 +17,7 @@ export default function PhotoGallery() {
         </div>
 
         <div className="text-center mt-10">
-          <h3 className="font-bubbly text-[2.55rem] sm:text-[3.1875rem] text-green-800">
+          <h3 className="font-bubbly text-[10.2rem] sm:text-[12.75rem] text-green-800 leading-none">
             Youth Group
           </h3>
           <p className="mt-4 text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -26,7 +26,7 @@ export default function PhotoGallery() {
           <div className="mt-8">
             <Link
               href="/youth"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-blue-900 font-bold text-lg rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-800 hover:bg-green-700 text-yellow-400 font-bold text-lg rounded-xl shadow-lg shadow-green-800/20 transition-all hover:-translate-y-0.5"
             >
               Click here to check out the youth! →
             </Link>
