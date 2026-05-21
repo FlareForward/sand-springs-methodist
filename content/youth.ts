@@ -52,11 +52,10 @@ export const youthEvents: YouthEvent[] = [
 // 2. Add an entry below:
 //    { id: 1, src: "/photos/youth/your-photo.jpg", alt: "Description", caption: "Optional caption" }
 export const youthPhotos: YouthPhoto[] = [
-  // ── ADD PHOTOS BELOW THIS LINE ──
-  // {
-  //   id: 1,
-  //   src: "/photos/youth/camp-2025.jpg",
-  //   alt: "Youth group at summer camp 2025",
-  //   caption: "Summer Camp 2025",
-  // },
+  {
+    id: 1,
+    src: "/photos/youth/color-run.jpg",
+    alt: "Youth group color run at sunset",
+    caption: "Color Run Night",
+  },
 ];
