@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Sermons", href: "#sermons" },
-  { label: "Events", href: "#events" },
-  { label: "Beliefs", href: "#beliefs" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Sermons", href: "/#sermons" },
+  { label: "Events", href: "/#events" },
+  { label: "Beliefs", href: "/#beliefs" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Nav() {
@@ -35,7 +35,7 @@ export default function Nav() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a
-            href="#home"
+            href="/#home"
             className="flex items-center gap-3 group"
             onClick={handleLinkClick}
           >
