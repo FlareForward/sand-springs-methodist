@@ -24,7 +24,7 @@ export default function YouthPage() {
       </div>
 
       {/* ── Main content card ──────────────────────────────── */}
-      <div className="max-w-2xl mx-auto px-4 py-10">
+      <div className="max-w-4xl mx-auto px-4 py-10">
 
         {/* Header */}
         <div className="text-center mb-8">
@@ -77,27 +77,24 @@ export default function YouthPage() {
 
         {/* ── Photos ────────────────────────────────────────── */}
         <section>
-          <h2 className="font-serif text-xl font-bold text-blue-900 mb-4 border-b border-slate-200 pb-2">
-            Photos
-          </h2>
-
           {youthPhotos.length > 0 ? (
-            <div className="grid grid-cols-3 gap-3">
+            <div className="flex flex-col gap-10">
               {youthPhotos.map((photo) => (
                 <div
                   key={photo.id}
-                  className="group relative rounded-xl overflow-hidden aspect-square bg-slate-100 shadow-sm"
+                  className="group relative w-full rounded-2xl overflow-hidden shadow-lg bg-slate-100"
                 >
                   <Image
                     src={photo.src}
                     alt={photo.alt}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 672px) 33vw, 210px"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 896px) 100vw, 896px"
                   />
                   {photo.caption && (
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <p className="text-white text-xs font-medium">{photo.caption}</p>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p className="text-white text-sm font-medium">{photo.caption}</p>
                     </div>
                   )}
                 </div>
