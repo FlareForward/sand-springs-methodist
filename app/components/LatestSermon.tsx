@@ -6,7 +6,7 @@ export default async function LatestSermon() {
   const apiKey = YOUTUBE_CONFIG.apiKey;
 
   // Attempt to fetch the newest video; gracefully falls back to playlist embed
-  const videos = await fetchPlaylistVideos(playlistId, apiKey, 1);
+  const videos = await fetchPlaylistVideos(playlistId, apiKey, 50);
   const latestVideo = videos[0] ?? null;
 
   const iframeSrc = latestVideo
