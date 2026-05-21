@@ -24,14 +24,25 @@ export default function PhotoGallery() {
           <p className="mt-4 text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
             Our youth director is dedicated to a youth ministry of fun, worship, fellowship, and practical life applications. Every Wednesday at 4 pm the youth rooms are open for the kids to hang out, play games, watch movies, or learn; Dinner starts at 6:30, and then there is worship and a Bible lesson. There is free time after the lesson for the kids to just play games and have fun. We have active church camps and other activities. There are also mission opportunities as well. Hope to see you there! Parents are welcome to hang out or volunteer.
           </p>
-          <div className="mt-8 max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src="/photos/youth-mission.jpg"
-              alt="Youth group packing mission bags"
-              width={800}
-              height={600}
-              className="w-full h-auto object-cover"
-            />
+          <div className="mt-8 grid grid-cols-2 gap-4 max-w-3xl mx-auto">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/photos/youth-mission.jpg"
+                alt="Youth group packing mission bags"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/photos/youth-go-karts.jpg"
+                alt="Youth group riding go-karts"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
           <div className="mt-8">
             <Link
