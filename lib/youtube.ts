@@ -54,15 +54,24 @@ export async function fetchPlaylistVideos(
         item.snippet?.thumbnails?.medium?.url ??
         item.snippet?.thumbnails?.default?.url ??
         "",
-      // videoPublishedAt is the actual video publish date;
-      // publishedAt is only when it was added to the playlist (less reliable)
       publishedAt: item.snippet?.videoPublishedAt ?? item.snippet?.publishedAt ?? "",
     })).filter((v: YouTubeVideo) => v.videoId !== "");
 
-    // Sort newest first by actual video publish date
-    return videos.sort((a: YouTubeVideo, b: YouTubeVideo) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    );
+    // YouTube returns playlist items oldest-first. Try sorting by publish date;
+    // if dates are missing/invalid fall back to simply reversing the array.
+    const getTime = (iso: string) => {
+      const t = iso ? new Date(iso).getTime() : NaN;
+      return isNaN(t) ? 0 : t;
+    };
+    const hasDates = videos.some((v: YouTubeVideo) => getTime(v.publishedAt) > 0);
+    if (hasDates) {
+      videos.sort((a: YouTubeVideo, b: YouTubeVideo) =>
+        getTime(b.publishedAt) - getTime(a.publishedAt)
+      );
+    } else {
+      videos.reverse();
+    }
+    return videos;
   } catch {
     return [];
   }
