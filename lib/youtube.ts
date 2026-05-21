@@ -101,16 +101,9 @@ export async function fetchPlaylistVideos(
       }))
       .filter((v: YouTubeVideo) => v.videoId !== "");
 
-    // Sort newest first by service date parsed from the title
-    // e.g. "Contemporary Service from May 17th, 2026"
-    // Then keep only the 50 most recent
-    return videos
-      .sort((a: YouTubeVideo, b: YouTubeVideo) => {
-        const aTime = extractServiceDate(a.title);
-        const bTime = extractServiceDate(b.title);
-        return bTime - aTime;
-      })
-      .slice(0, 50);
+    // The playlist is built oldest → newest, so simply reverse it
+    // to display newest → oldest with no date parsing needed.
+    return videos.reverse();
   } catch {
     return [];
   }
