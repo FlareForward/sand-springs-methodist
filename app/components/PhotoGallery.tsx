@@ -19,7 +19,7 @@ export default function PhotoGallery() {
 
         <div className="text-center mt-10">
           <h3 className="font-bubbly text-[10.2rem] sm:text-[12.75rem] text-green-800 leading-none">
-            Youth Group
+            Devoted Youth
           </h3>
           <p className="mt-4 text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
             Our youth director is dedicated to a youth ministry of fun, worship, fellowship, and practical life applications. Every Wednesday at 4 pm the youth rooms are open for the kids to hang out, play games, watch movies, or learn; Dinner starts at 6:30, and then there is worship and a Bible lesson. There is free time after the lesson for the kids to just play games and have fun. We have active church camps and other activities. There are also mission opportunities as well. Hope to see you there! Parents are welcome to hang out or volunteer.
