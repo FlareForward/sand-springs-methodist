@@ -26,12 +26,12 @@ export interface YouTubeVideo {
   publishedAt: string;
 }
 
-// Fetches up to `maxResults` videos from a playlist.
+// Fetches up to `maxResults` videos from a playlist, sorted newest first.
 // Returns an empty array on any error or when the API key is a placeholder.
 export async function fetchPlaylistVideos(
   playlistId: string,
   apiKey: string,
-  maxResults = 12
+  maxResults = 50
 ): Promise<YouTubeVideo[]> {
   if (isPlaceholder(apiKey) || isPlaceholder(playlistId)) return [];
 
@@ -47,7 +47,7 @@ export async function fetchPlaylistVideos(
 
     const data = await res.json();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (data.items ?? []).map((item: any) => ({
+    const videos = (data.items ?? []).map((item: any) => ({
       videoId: item.snippet?.resourceId?.videoId ?? "",
       title: item.snippet?.title ?? "Untitled",
       thumbnail:
@@ -56,6 +56,11 @@ export async function fetchPlaylistVideos(
         "",
       publishedAt: item.snippet?.publishedAt ?? "",
     })).filter((v: YouTubeVideo) => v.videoId !== "");
+
+    // Sort newest first
+    return videos.sort((a: YouTubeVideo, b: YouTubeVideo) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
   } catch {
     return [];
   }
