@@ -17,7 +17,7 @@ export default function PhotoGallery() {
         </div>
 
         <div className="text-center mt-10">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-blue-900">
+          <h3 className="font-bubbly text-2xl sm:text-3xl text-green-800">
             Youth Group
           </h3>
           <p className="mt-4 text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
