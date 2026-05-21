@@ -103,11 +103,14 @@ export async function fetchPlaylistVideos(
 
     // Sort newest first by service date parsed from the title
     // e.g. "Contemporary Service from May 17th, 2026"
-    return videos.sort((a: YouTubeVideo, b: YouTubeVideo) => {
-      const aTime = extractServiceDate(a.title);
-      const bTime = extractServiceDate(b.title);
-      return bTime - aTime;
-    });
+    // Then keep only the 50 most recent
+    return videos
+      .sort((a: YouTubeVideo, b: YouTubeVideo) => {
+        const aTime = extractServiceDate(a.title);
+        const bTime = extractServiceDate(b.title);
+        return bTime - aTime;
+      })
+      .slice(0, 50);
   } catch {
     return [];
   }
