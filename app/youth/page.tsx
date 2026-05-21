@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function YouthPage() {
   return (
-    <div className="bg-[#faf8f5] min-h-screen pt-20">
+    <div className="bg-yellow-300 min-h-screen pt-20">
 
       {/* ── Back to Homepage tab ───────────────────────────── */}
       <div className="bg-blue-900 px-4 py-2 text-center">
@@ -28,8 +28,8 @@ export default function YouthPage() {
 
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-blue-900">
-            Welcome to the Youth!
+          <h1 className="font-bubbly text-5xl sm:text-6xl md:text-7xl text-green-800">
+            Devoted Youth
           </h1>
           <p className="mt-3 text-slate-500 text-base max-w-lg mx-auto leading-relaxed">
             Every Wednesday at 4 PM — games, dinner, worship, and Bible study.
