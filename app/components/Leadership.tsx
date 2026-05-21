@@ -37,7 +37,7 @@ const leaders: Leader[] = [
     name: "Cathy Gifford",
     role: "Worship Leader",
     bio: "Cathy is retired from 43 years of teaching music in the public schools, and has been the choir director for SSMC for 14 years. She also serves as the organist and plays specials on the Celtic harp. Cathy also directs the community choir!",
-    src: null,
+    src: "/leadership/cathy.gif",
     email: "worship@sandspringsmethodist.org",
   },
 ];
