@@ -30,7 +30,7 @@ const leaders: Leader[] = [
     name: "Jessica",
     role: "Youth Director",
     bio: "Jessica is an awesome leader who graduated from Oklahoma Wesleyan University with her Bachelors degree in Pastoral Ministry, and she is currently in seminary working on her Master of Divinity. Jessica is very dedicated to teaching our youth the importance of Scripture, and providing a safe place for the youth to eat, relax, and have fun.",
-    src: null,
+    src: "/leadership/jessica.jpg",
     email: "youth@sandspringsmethodist.org",
   },
   {
