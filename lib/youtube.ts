@@ -9,9 +9,10 @@ export const YOUTUBE_CONFIG = {
   traditionalPlaylistId: process.env.YOUTUBE_PLAYLIST_ID ?? "TRADITIONAL_PLAYLIST_ID",
 };
 
-// Tries to extract the actual service date from a video title.
-// Handles formats like: "January 5, 2025", "Jan 5 2025", "1/5/2025",
-// "01-05-2025", "2025-01-05", "May 17th 2026", etc.
+// Extracts the actual service date from titles like:
+// "Contemporary Service from Jan.5th, 2025"
+// "Traditional Service from May 17th, 2026"
+// "Contemporary Service from June 1st, 2025"
 function extractServiceDate(title: string): number {
   const months: Record<string, number> = {
     january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
@@ -20,52 +21,20 @@ function extractServiceDate(title: string): number {
     sep: 8, oct: 9, nov: 10, dec: 11,
   };
 
-  // Pattern 1: "January 5, 2025" / "Jan 5th, 2025" / "May 17 2026"
-  const longMonth = title.match(
-    /\b(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\s+(\d{1,2})(?:st|nd|rd|th)?[,\s]+(\d{4})\b/i
+  // Matches "from Jan.5th, 2025" / "from May 17th, 2026" / "from June 1st, 2025"
+  const m = title.match(
+    /from\s+(january|february|march|april|may|june|july|august|september|october|november|december|jan\.?|feb\.?|mar\.?|apr\.?|jun\.?|jul\.?|aug\.?|sep\.?|oct\.?|nov\.?|dec\.?)\s*(\d{1,2})(?:st|nd|rd|th)?,?\s*(\d{4})/i
   );
-  if (longMonth) {
-    const m = months[longMonth[1].toLowerCase()];
-    const d = parseInt(longMonth[2], 10);
-    const y = parseInt(longMonth[3], 10);
-    const t = new Date(y, m, d).getTime();
-    if (!isNaN(t)) return t;
+  if (m) {
+    const monthKey = m[1].toLowerCase().replace(".", "");
+    const mo = months[monthKey];
+    const d = parseInt(m[2], 10);
+    const y = parseInt(m[3], 10);
+    if (mo !== undefined && !isNaN(d) && !isNaN(y)) {
+      return new Date(y, mo, d).getTime();
+    }
   }
-
-  // Pattern 2: MM/DD/YYYY or M/D/YYYY
-  const slashDate = title.match(/\b(\d{1,2})\/(\d{1,2})\/(\d{4})\b/);
-  if (slashDate) {
-    const t = new Date(
-      parseInt(slashDate[3], 10),
-      parseInt(slashDate[1], 10) - 1,
-      parseInt(slashDate[2], 10)
-    ).getTime();
-    if (!isNaN(t)) return t;
-  }
-
-  // Pattern 3: YYYY-MM-DD (ISO)
-  const isoDate = title.match(/\b(\d{4})-(\d{2})-(\d{2})\b/);
-  if (isoDate) {
-    const t = new Date(
-      parseInt(isoDate[1], 10),
-      parseInt(isoDate[2], 10) - 1,
-      parseInt(isoDate[3], 10)
-    ).getTime();
-    if (!isNaN(t)) return t;
-  }
-
-  // Pattern 4: MM-DD-YYYY
-  const dashDate = title.match(/\b(\d{1,2})-(\d{1,2})-(\d{4})\b/);
-  if (dashDate) {
-    const t = new Date(
-      parseInt(dashDate[3], 10),
-      parseInt(dashDate[1], 10) - 1,
-      parseInt(dashDate[2], 10)
-    ).getTime();
-    if (!isNaN(t)) return t;
-  }
-
-  return 0; // no date found
+  return 0;
 }
 
 // Returns true when the value is still a placeholder
@@ -85,81 +54,58 @@ export interface YouTubeVideo {
   publishedAt: string;
 }
 
-// Fetches up to `maxResults` videos from a playlist, sorted newest first.
-// Uses a two-step approach: playlistItems for IDs/thumbnails, then videos.list
-// for accurate publish dates — the only reliable source for sort order.
+// Fetches ALL videos from a playlist using pagination, sorted newest first.
+// Sorts by the service date parsed from the video title.
 export async function fetchPlaylistVideos(
   playlistId: string,
   apiKey: string,
-  maxResults = 50
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _maxResults = 50
 ): Promise<YouTubeVideo[]> {
   if (isPlaceholder(apiKey) || isPlaceholder(playlistId)) return [];
 
   try {
-    // Step 1: get playlist items (video IDs + thumbnails)
-    const playlistUrl =
-      `https://www.googleapis.com/youtube/v3/playlistItems` +
-      `?part=snippet&maxResults=${maxResults}` +
-      `&playlistId=${encodeURIComponent(playlistId)}` +
-      `&key=${encodeURIComponent(apiKey)}`;
-
-    const playlistRes = await fetch(playlistUrl, { cache: "no-store" });
-    if (!playlistRes.ok) return [];
-    const playlistData = await playlistRes.json();
-
+    // Step 1: paginate through ALL playlist items (YouTube max 50 per page)
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const items: any[] = playlistData.items ?? [];
-    const videoIds = items
+    const allItems: any[] = [];
+    let pageToken: string | undefined = undefined;
+
+    do {
+      const url =
+        `https://www.googleapis.com/youtube/v3/playlistItems` +
+        `?part=snippet&maxResults=50` +
+        `&playlistId=${encodeURIComponent(playlistId)}` +
+        `&key=${encodeURIComponent(apiKey)}` +
+        (pageToken ? `&pageToken=${pageToken}` : "");
+
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) break;
+      const data = await res.json();
+      allItems.push(...(data.items ?? []));
+      pageToken = data.nextPageToken;
+    } while (pageToken);
+
+    if (allItems.length === 0) return [];
+
+    // Build video list from titles + thumbnails
+    const videos: YouTubeVideo[] = allItems
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      .map((item: any) => item.snippet?.resourceId?.videoId ?? "")
-      .filter((id: string) => id !== "");
-
-    if (videoIds.length === 0) return [];
-
-    // Step 2: get actual publish dates from videos.list (always accurate)
-    const videosUrl =
-      `https://www.googleapis.com/youtube/v3/videos` +
-      `?part=snippet&id=${videoIds.join(",")}` +
-      `&key=${encodeURIComponent(apiKey)}`;
-
-    const videosRes = await fetch(videosUrl, { cache: "no-store" });
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const videosData = videosRes.ok ? await videosRes.json() : { items: [] };
-
-    // Build videoId → publishedAt lookup
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const dateMap = new Map<string, string>();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    for (const v of (videosData.items ?? []) as any[]) {
-      if (v.id && v.snippet?.publishedAt) {
-        dateMap.set(v.id, v.snippet.publishedAt);
-      }
-    }
-
-    // Merge playlist thumbnails with accurate publish dates
-    const videos: YouTubeVideo[] = items
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      .map((item: any) => {
-        const videoId = item.snippet?.resourceId?.videoId ?? "";
-        return {
-          videoId,
-          title: item.snippet?.title ?? "Untitled",
-          thumbnail:
-            item.snippet?.thumbnails?.medium?.url ??
-            item.snippet?.thumbnails?.default?.url ??
-            "",
-          publishedAt: dateMap.get(videoId) ?? "",
-        };
-      })
+      .map((item: any) => ({
+        videoId: item.snippet?.resourceId?.videoId ?? "",
+        title: item.snippet?.title ?? "Untitled",
+        thumbnail:
+          item.snippet?.thumbnails?.medium?.url ??
+          item.snippet?.thumbnails?.default?.url ??
+          "",
+        publishedAt: item.snippet?.publishedAt ?? "",
+      }))
       .filter((v: YouTubeVideo) => v.videoId !== "");
 
-    // Sort newest first by the actual service date extracted from the title.
-    // Falls back to publishedAt only if no date can be parsed from the title.
+    // Sort newest first by service date parsed from the title
+    // e.g. "Contemporary Service from May 17th, 2026"
     return videos.sort((a: YouTubeVideo, b: YouTubeVideo) => {
-      const aTime = extractServiceDate(a.title) ||
-        (a.publishedAt ? new Date(a.publishedAt).getTime() : 0);
-      const bTime = extractServiceDate(b.title) ||
-        (b.publishedAt ? new Date(b.publishedAt).getTime() : 0);
+      const aTime = extractServiceDate(a.title);
+      const bTime = extractServiceDate(b.title);
       return bTime - aTime;
     });
   } catch {
