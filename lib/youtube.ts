@@ -42,7 +42,7 @@ export async function fetchPlaylistVideos(
       `&playlistId=${encodeURIComponent(playlistId)}` +
       `&key=${encodeURIComponent(apiKey)}`;
 
-    const res = await fetch(url, { next: { revalidate: 60 } });
+    const res = await fetch(url, { cache: "no-store" });
     if (!res.ok) return [];
 
     const data = await res.json();
@@ -54,10 +54,12 @@ export async function fetchPlaylistVideos(
         item.snippet?.thumbnails?.medium?.url ??
         item.snippet?.thumbnails?.default?.url ??
         "",
-      publishedAt: item.snippet?.publishedAt ?? "",
+      // videoPublishedAt is the actual video publish date;
+      // publishedAt is only when it was added to the playlist (less reliable)
+      publishedAt: item.snippet?.videoPublishedAt ?? item.snippet?.publishedAt ?? "",
     })).filter((v: YouTubeVideo) => v.videoId !== "");
 
-    // Sort newest first
+    // Sort newest first by actual video publish date
     return videos.sort((a: YouTubeVideo, b: YouTubeVideo) =>
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     );
