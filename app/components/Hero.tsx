@@ -56,15 +56,11 @@ export default function Hero() {
             <p className="text-white font-semibold text-sm uppercase tracking-widest mb-1">Sunday Services</p>
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
               <span className="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0" />
-              Contemporary Service — 9:00 AM
-            </div>
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-blue-300 flex-shrink-0" />
-              Sunday School — 10:00 AM
+              Sunday School — 9:30 AM
             </div>
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
               <span className="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0" />
-              Traditional Service — 11:00 AM
+              Sunday Worship — 10:30 AM
             </div>
           </div>
 
@@ -77,7 +73,7 @@ export default function Hero() {
             </div>
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-2 rounded-full">
               <span className="w-2 h-2 rounded-full bg-green-400 flex-shrink-0" />
-              Youth Sunday School — Sunday 10:00 AM
+              Youth Sunday School — Sunday 9:30 AM
             </div>
           </div>
         </div>

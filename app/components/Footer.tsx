@@ -74,16 +74,16 @@ export default function Footer() {
             <h3 className="text-white font-serif font-bold text-base mb-4">Sunday Schedule</h3>
             <div className="space-y-3">
               <div className="border-l-2 border-amber-500 pl-4">
-                <p className="text-white text-sm font-semibold">9:00 AM</p>
-                <p className="text-blue-300 text-sm">Contemporary Service</p>
+                <p className="text-white text-sm font-semibold">9:30 AM</p>
+                <p className="text-blue-300 text-sm">Sunday School</p>
               </div>
               <div className="border-l-2 border-blue-400 pl-4">
-                <p className="text-white text-sm font-semibold">10:00 AM</p>
-                <p className="text-blue-300 text-sm">Small Group Studies</p>
+                <p className="text-white text-sm font-semibold">9:30 AM</p>
+                <p className="text-blue-300 text-sm">Youth Sunday School</p>
               </div>
               <div className="border-l-2 border-amber-500 pl-4">
-                <p className="text-white text-sm font-semibold">11:00 AM</p>
-                <p className="text-blue-300 text-sm">Traditional Service</p>
+                <p className="text-white text-sm font-semibold">10:30 AM</p>
+                <p className="text-blue-300 text-sm">Sunday Worship</p>
               </div>
               <div className="border-l-2 border-slate-600 pl-4">
                 <p className="text-white text-sm font-semibold">Office Hours</p>
