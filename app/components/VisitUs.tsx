@@ -38,21 +38,21 @@ export default function VisitUs() {
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-amber-400" />
                     <div>
-                      <p className="text-white font-semibold text-sm">9:30 AM — Sunday School</p>
+                      <p className="text-white font-semibold text-sm">Sunday School 9:30 am</p>
                       <p className="text-blue-300 text-xs mt-0.5">Adult &amp; children&apos;s classes</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-blue-400" />
                     <div>
-                      <p className="text-white font-semibold text-sm">9:30 AM — Youth Sunday School</p>
+                      <p className="text-white font-semibold text-sm">Youth Sunday School 9:30am</p>
                       <p className="text-blue-300 text-xs mt-0.5">Youth Bible study &amp; fellowship</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-amber-400" />
                     <div>
-                      <p className="text-white font-semibold text-sm">10:30 AM — Sunday Worship</p>
+                      <p className="text-white font-semibold text-sm">Sunday Worship 10:30am</p>
                       <p className="text-blue-300 text-xs mt-0.5">Worship service for all ages</p>
                     </div>
                   </div>
