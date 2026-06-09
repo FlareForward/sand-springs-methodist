@@ -71,16 +71,17 @@ export async function fetchPlaylistVideos(
     let pageToken: string | undefined = undefined;
 
     do {
-      const url =
+      const url: string =
         `https://www.googleapis.com/youtube/v3/playlistItems` +
         `?part=snippet&maxResults=50` +
         `&playlistId=${encodeURIComponent(playlistId)}` +
         `&key=${encodeURIComponent(apiKey)}` +
         (pageToken ? `&pageToken=${pageToken}` : "");
 
-      const res = await fetch(url, { cache: "no-store" });
+      const res: Response = await fetch(url, { cache: "no-store" });
       if (!res.ok) break;
-      const data = await res.json();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const data: any = await res.json();
       allItems.push(...(data.items ?? []));
       pageToken = data.nextPageToken;
     } while (pageToken);
