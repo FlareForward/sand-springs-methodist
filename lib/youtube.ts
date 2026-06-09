@@ -71,7 +71,7 @@ export async function fetchPlaylistVideos(
     let pageToken: string | undefined = undefined;
 
     do {
-      const url =
+      const url: string =
         `https://www.googleapis.com/youtube/v3/playlistItems` +
         `?part=snippet&maxResults=50` +
         `&playlistId=${encodeURIComponent(playlistId)}` +
