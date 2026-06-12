@@ -54,13 +54,21 @@ function LeaderCard({ name, role, bio, src, email }: Leader) {
       {/* Photo */}
       <div className="relative h-64 overflow-hidden">
         {src ? (
-          <Image
-            src={src}
-            alt={name}
-            fill
-            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
+          src.endsWith(".svg") ? (
+            <img
+              src={src}
+              alt={name}
+              className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            />
+          ) : (
+            <Image
+              src={src}
+              alt={name}
+              fill
+              className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+          )
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-blue-900 via-blue-700 to-indigo-600 flex items-end justify-start p-0">
             <div className="absolute inset-0 flex items-center justify-center opacity-15">
