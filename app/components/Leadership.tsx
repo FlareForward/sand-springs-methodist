@@ -40,6 +40,12 @@ const leaders: Leader[] = [
     src: "/leadership/cathy.gif",
     email: "worship@sandspringsmethodist.org",
   },
+  {
+    name: "Katherine Sposato",
+    role: "Children's Director",
+    bio: "Katherine Sposato has been a member of Sand Springs Methodist Church since childhood and has a lifelong passion for helping children grow in their faith. She earned a degree in Early Childhood Education from Oklahoma State University and spent four years teaching in public schools before becoming a homeschooling mom. Katherine is married to Jared and has two daughters, Allison and Emily. They enjoy playing games and taking care of their cat, turtle, and chickens.\n\nKatherine's Vision:\n\nAs Children's Director, Katherine loves creating engaging opportunities for children to learn about Jesus through play, games, hands-on activities, and meaningful relationships. She is excited to partner with families as she helps children discover God's love and grow in their walk with Christ.",
+    src: "/leadership/katherine.svg",
+  },
 ];
 
 function LeaderCard({ name, role, bio, src, email }: Leader) {
@@ -77,7 +83,7 @@ function LeaderCard({ name, role, bio, src, email }: Leader) {
       <div className="p-6">
         <h3 className="font-serif text-xl font-bold text-blue-900 leading-tight">{name}</h3>
         <p className="text-amber-600 font-semibold text-sm mt-0.5 mb-4">{role}</p>
-        <p className="text-slate-600 text-sm leading-relaxed">{bio}</p>
+        <p className="text-slate-600 text-sm leading-relaxed whitespace-pre-line">{bio}</p>
         {email && (
           <a
             href={`mailto:${email}`}

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <filter id="crayon">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#crayon)">
+    <!-- sky -->
+    <rect width="400" height="400" fill="#aee3ff"/>
+    <!-- water -->
+    <rect y="230" width="400" height="170" fill="#5fc3e6"/>
+    <g stroke="#3fa9d4" stroke-width="4" fill="none" stroke-linecap="round">
+      <path d="M10 250 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+      <path d="M10 280 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+      <path d="M10 320 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+      <path d="M10 355 q20 -10 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+    </g>
+
+    <!-- sun -->
+    <circle cx="70" cy="60" r="35" fill="#ffd23f"/>
+    <g stroke="#ffb000" stroke-width="6">
+      <line x1="70" y1="0" x2="70" y2="20"/>
+      <line x1="70" y1="100" x2="70" y2="120"/>
+      <line x1="10" y1="60" x2="30" y2="60"/>
+      <line x1="110" y1="60" x2="130" y2="60"/>
+    </g>
+
+    <!-- clouds -->
+    <g fill="#ffffff">
+      <ellipse cx="250" cy="50" rx="38" ry="20"/>
+      <ellipse cx="285" cy="42" rx="28" ry="18"/>
+      <ellipse cx="220" cy="48" rx="24" ry="16"/>
+    </g>
+
+    <!-- shoreline on the right -->
+    <path d="M400 220 Q330 210 290 235 Q330 250 400 245 Z" fill="#8fd14f"/>
+    <path d="M400 245 Q330 235 290 250 Q330 270 400 270 Z" fill="#7bbf3f"/>
+    <!-- hill/tree on shore -->
+    <circle cx="365" cy="195" r="22" fill="#5cb85c"/>
+    <circle cx="385" cy="205" r="16" fill="#6fc96f"/>
+    <rect x="361" y="215" width="8" height="16" fill="#a0522d"/>
+
+    <!-- birds -->
+    <g stroke="#3a3a3a" stroke-width="4" fill="none" stroke-linecap="round">
+      <path d="M120 70 q10 -14 20 0 q10 -14 20 0"/>
+      <path d="M170 100 q9 -12 18 0 q9 -12 18 0"/>
+    </g>
+
+    <!-- net in the water, off the side of the boat -->
+    <path d="M180 290 Q230 305 255 340 Q220 360 185 345 Q165 315 180 290 Z" fill="none" stroke="#7a3b18" stroke-width="3"/>
+    <g stroke="#7a3b18" stroke-width="1.5">
+      <line x1="190" y1="298" x2="225" y2="335"/>
+      <line x1="200" y1="294" x2="238" y2="340"/>
+      <line x1="180" y1="312" x2="230" y2="325"/>
+      <line x1="183" y1="328" x2="245" y2="338"/>
+    </g>
+    <!-- fish in net -->
+    <ellipse cx="210" cy="320" rx="11" ry="6" fill="#6fc9e6"/>
+    <ellipse cx="225" cy="335" rx="9" ry="5" fill="#6fc9e6"/>
+    <!-- rope from net to boat -->
+    <line x1="210" y1="290" x2="225" y2="265" stroke="#7a3b18" stroke-width="2"/>
+
+    <!-- boat -->
+    <path d="M100 270 Q210 320 320 270 L300 248 Q210 280 120 248 Z" fill="#a0522d"/>
+    <path d="M105 270 Q210 296 315 270" fill="none" stroke="#7a3b18" stroke-width="5"/>
+
+    <!-- mast and sail -->
+    <line x1="210" y1="250" x2="210" y2="155" stroke="#7a3b18" stroke-width="6"/>
+    <path d="M213 160 L270 195 L213 225 Z" fill="#fff8dc" stroke="#e0d5b0" stroke-width="3"/>
+
+    <!-- Jesus standing in center -->
+    <g>
+      <path d="M160 250 Q155 200 165 185 Q175 170 185 185 Q195 200 190 250 Z" fill="#f5f0e6" stroke="#d8cdb8" stroke-width="3"/>
+      <path d="M158 215 Q175 222 192 215" stroke="#c0392b" stroke-width="5" fill="none"/>
+      <circle cx="175" cy="172" r="14" fill="#e8b98a"/>
+      <path d="M162 168 Q160 158 175 156 Q190 158 188 168 Q192 178 185 186 Q180 178 175 184 Q170 178 165 186 Q158 178 162 168 Z" fill="#6b4226"/>
+      <!-- arm gesturing -->
+      <line x1="188" y1="205" x2="210" y2="195" stroke="#e8b98a" stroke-width="6" stroke-linecap="round"/>
+    </g>
+
+    <!-- disciple 1, pulling net -->
+    <g>
+      <path d="M115 250 Q113 215 123 205 Q133 195 141 205 Q151 215 149 250 Z" fill="#cdeac0" stroke="#a8d59b" stroke-width="3"/>
+      <circle cx="132" cy="198" r="11" fill="#e8b98a"/>
+      <path d="M122 196 Q121 188 132 186 Q143 188 142 196 Q145 202 139 206 Q135 200 132 204 Q129 200 125 206 Q119 202 122 196 Z" fill="#3b2a1a"/>
+      <!-- arms reaching toward net -->
+      <line x1="143" y1="225" x2="170" y2="245" stroke="#e8b98a" stroke-width="6" stroke-linecap="round"/>
+      <line x1="143" y1="235" x2="178" y2="265" stroke="#e8b98a" stroke-width="6" stroke-linecap="round"/>
+    </g>
+
+    <!-- disciple 2 -->
+    <g>
+      <path d="M240 250 Q238 218 248 208 Q258 198 266 208 Q276 218 274 250 Z" fill="#f6d6a8" stroke="#e0bd86" stroke-width="3"/>
+      <circle cx="257" cy="201" r="11" fill="#c98b5e"/>
+      <path d="M247 199 Q246 191 257 189 Q268 191 267 199 Q270 205 264 209 Q260 203 257 207 Q254 203 250 209 Q244 205 247 199 Z" fill="#2e2118"/>
+      <!-- arm helping with net rope -->
+      <line x1="248" y1="225" x2="225" y2="260" stroke="#c98b5e" stroke-width="6" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
