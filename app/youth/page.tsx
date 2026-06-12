@@ -32,7 +32,7 @@ export default function YouthPage() {
             Devoted Youth
           </h1>
           <p className="mt-3 text-slate-500 text-base max-w-lg mx-auto leading-relaxed">
-            Every Wednesday at 4 PM — games, dinner, worship, and Bible study.
+            Every Wednesday from 4 - 8:30 PM — games, dinner, worship, and Bible study.
             Parents are always welcome!
           </p>
         </div>
