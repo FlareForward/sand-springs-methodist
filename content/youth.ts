@@ -31,7 +31,7 @@ export const youthEvents: YouthEvent[] = [
     id: 1,
     title: "Wednesday Youth Night",
     date: "Every Wednesday",
-    time: "4:00 PM – 8:00 PM",
+    time: "4:00 PM – 8:30 PM",
     location: "Youth Rooms — Sand Springs Methodist Church",
     description:
       "Youth rooms open at 4 PM for hangout time — games, movies, and more. Dinner is served at 6:30 PM, followed by worship and a Bible lesson. Free time after the lesson for games and fun. Parents are always welcome to hang out or volunteer!",
