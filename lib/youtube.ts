@@ -102,9 +102,10 @@ export async function fetchPlaylistVideos(
       }))
       .filter((v: YouTubeVideo) => v.videoId !== "");
 
-    // The playlist is built oldest → newest, so simply reverse it
-    // to display newest → oldest with no date parsing needed.
-    return videos.reverse();
+    // Sort by the service date parsed from the title (newest first).
+    // Playlist position isn't reliable since videos can be added out of order.
+    videos.sort((a, b) => extractServiceDate(b.title) - extractServiceDate(a.title));
+    return videos;
   } catch {
     return [];
   }
