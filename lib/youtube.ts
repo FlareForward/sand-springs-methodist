@@ -102,9 +102,13 @@ export async function fetchPlaylistVideos(
       }))
       .filter((v: YouTubeVideo) => v.videoId !== "");
 
-    // Sort by the service date parsed from the title (newest first).
+    // Sort by the service date parsed from the title (newest first), falling
+    // back to the video's actual publish date when the title doesn't match
+    // the expected "Service from Month Day, Year" pattern.
     // Playlist position isn't reliable since videos can be added out of order.
-    videos.sort((a, b) => extractServiceDate(b.title) - extractServiceDate(a.title));
+    const effectiveDate = (v: YouTubeVideo) =>
+      extractServiceDate(v.title) || new Date(v.publishedAt).getTime();
+    videos.sort((a, b) => effectiveDate(b) - effectiveDate(a));
     return videos;
   } catch {
     return [];
