@@ -60,7 +60,7 @@ export default function Events() {
         </div>
 
         <p className="text-teal-950/90 text-lg leading-relaxed max-w-2xl mx-auto">
-          July 19th to July 23rd, 6:15&ndash;8:15pm &mdash; the kids are going to
+          July 26th to July 30th, 6:15&ndash;8:15pm &mdash; the kids are going to
           have a lot of fun! We feed them dinner every night of VBS.
           Registration link below.
         </p>
