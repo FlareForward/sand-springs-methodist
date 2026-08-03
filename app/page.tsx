@@ -1,5 +1,4 @@
 import Hero from "./components/Hero";
-import Events from "./components/Events";
 import PastorMessage from "./components/PastorMessage";
 import WhatToExpect from "./components/WhatToExpect";
 import LatestSermon from "./components/LatestSermon";
@@ -12,7 +11,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Events />
       <PastorMessage />
       <WhatToExpect />
       <LatestSermon />
