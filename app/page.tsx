@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import PastorMessage from "./components/PastorMessage";
 import WhatToExpect from "./components/WhatToExpect";
+import ThisWeek from "./components/ThisWeek";
 import LatestSermon from "./components/LatestSermon";
 import PhotoGallery from "./components/PhotoGallery";
 import CoreBeliefs from "./components/CoreBeliefs";
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <PastorMessage />
       <WhatToExpect />
+      <ThisWeek />
       <LatestSermon />
       <PhotoGallery />
       <CoreBeliefs />
