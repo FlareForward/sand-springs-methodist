@@ -26,7 +26,6 @@ export default function ThisWeek() {
             src={`${EMBED_BASE}/${CHURCH_CODE}/announcements`}
             title="Sand Springs Methodist Church announcements"
             data-cc-embed=""
-            loading="lazy"
             className="w-full border-0"
             style={{ minHeight: 480 }}
           />
@@ -34,7 +33,6 @@ export default function ThisWeek() {
             src={`${EMBED_BASE}/${CHURCH_CODE}/events`}
             title="Sand Springs Methodist Church upcoming events"
             data-cc-embed=""
-            loading="lazy"
             className="w-full border-0"
             style={{ minHeight: 480 }}
           />
